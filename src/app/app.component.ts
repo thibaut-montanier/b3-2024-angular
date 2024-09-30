@@ -2,13 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Player } from './models/player';
 import { PlayersTableComponent } from "./components/players-table/players-table.component";
-import { TennisPlayersComponent } from "./components/tennis-players/tennis-players.component";
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, PlayersTableComponent, TennisPlayersComponent],
+  imports: [FormsModule, PlayersTableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
