@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>First Name</th>
+    <th>Ranking</th>
+  </tr>
+  @for (player of players; track $index) {
+    <tr>
+      <td>{{ player.name }}</td>
+      <td>{{ player.firstName }}</td>
+      <td>{{ player.ranking }}</td>
+    </tr>
+  }
+</table>
