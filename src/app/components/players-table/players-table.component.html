@@ -5,8 +5,8 @@
     <th>Ranking</th>
   </tr>
   @for (player of players; track $index) {
-    <tr>
-      <td>{{ player.name }}</td>
+    <tr >
+      <td (mouseover)="onOver()">{{ player.name }}</td>
       <td>{{ player.firstName }}</td>
       <td>{{ player.ranking }}</td>
     </tr>

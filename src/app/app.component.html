@@ -1,9 +1,4 @@
 <div class="main">
-  @if (ilfaitbeau) {
-    il fait beau
-  } @else {
-    il fait moche
-  }
   <div>
     <h1>Salut tout le monde, ou plutot salut {{ currentPlayer.name }}</h1>
     <h2>Titre : {{ title }} </h2>
@@ -21,12 +16,18 @@
     </div>
   </div>
   <button (click)="onSubmit()">Save</button>
-
-  <ul>
-    @for (player of players; track $index) {
-      <li> {{ player.firstName }} {{ player.name }} - {{ player.ranking }} </li>
-    }
-  </ul>
-
 </div>
-<app-players-table [players]="players"></app-players-table>
+
+<div>
+  <input type="radio" id="tableopt"  value="table" checked [(ngModel)]="viewType" />
+  <label for="tableopt">table</label>
+  <input type="radio" id="listopt" value="list"  [(ngModel)]="viewType" />
+  <label for="listopt">list</label>
+</div>
+
+@if (viewType == 'table'){
+  <app-players-table [players]="players" (over)="onOver($event)">
+  </app-players-table>
+} @else {
+  <app-players-list [players]="players"></app-players-list>
+}

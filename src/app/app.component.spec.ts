@@ -11,10 +11,14 @@ describe('AppComponent', () => {
 
 
   it('onClick', () => {
+    // prepare
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    app.onClick();
-    expect(result).toBe(2);
+    // do
+    app.onSubmit();
+
+    // verify
+    expect(app.currentPlayer.name).toBe('');
   });
 });
