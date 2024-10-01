@@ -1,8 +1,51 @@
-table, tr, td, th {
-  border: solid white 1px;
+
+body {
+  background-color: #2d2d2d; /* Couleur de fond sombre */
+  color: #f0f0f0; /* Texte clair */
+  font-family: Arial, sans-serif;
 }
 
 table {
-  width: 80%;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  background-color: #1f1f1f; /* Fond de la table */
+  color: #f0f0f0; /* Texte de la table */
+  border: 1px solid #444; /* Bordure extérieure */
 }
 
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background-color: #3b3b3b; /* Fond de l'en-tête */
+  color: #f0f0f0; /* Couleur du texte de l'en-tête */
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #444; /* Effet hover sur les lignes */
+}
+
+tr:nth-child(even) {
+  background-color: #323232; /* Couleur alternative pour les lignes paires */
+  hover {
+    background-color: #444 ; /* Effet hover sur les lignes */
+  }
+}
+
+tr:hover {
+  background-color: #444 ; /* Effet hover sur les lignes */
+}
+
+caption {
+  caption-side: bottom;
+  font-size: 16px;
+  padding: 10px;
+  color: #bbbbbb;
+  text-align: center;
+}
