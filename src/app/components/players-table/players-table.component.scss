@@ -1,15 +1,9 @@
 
-body {
-  background-color: #2d2d2d; /* Couleur de fond sombre */
-  color: #f0f0f0; /* Texte clair */
-  font-family: Arial, sans-serif;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  font-size: 18px;
+  font-size: 1.5rem;
   text-align: left;
   background-color: #1f1f1f; /* Fond de la table */
   color: #f0f0f0; /* Texte de la table */
@@ -28,7 +22,7 @@ th {
 }
 
 tr:hover {
-  background-color: #444; /* Effet hover sur les lignes */
+  background-color: #555; /* Effet hover sur les lignes */
 }
 
 tr:nth-child(even) {

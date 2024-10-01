@@ -12,11 +12,10 @@ import { CommonModule } from '@angular/common';
 export class PlayersTableComponent {
   @Input() players: Player[] =[];
 
+  clickPlayer = output<Player>();
 
-  over = output<string>();
-
-  onOver(){
-    this.over.emit('test');
+  onPlayerClic(current: Player){
+    this.clickPlayer.emit(current);
   }
 
 }

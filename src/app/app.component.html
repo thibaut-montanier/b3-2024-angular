@@ -1,13 +1,13 @@
 <div class="main">
   <div>
-    <h1>Salut tout le monde, ou plutot salut {{ currentPlayer.name }}</h1>
-    <h2>Titre : {{ title }} </h2>
+    <app-players-title [actualPlayer]="selectedPlayer"></app-players-title>
+
     <div>
-      <label for="name">name</label>
+      <label for="name" class="inputlabel">name</label>
       <input id="name" [(ngModel)]="currentPlayer.name" />
     </div>
     <div>
-      <label for="firstName">First name</label>
+      <label for="firstName" class="inputlabel2">First name</label>
       <input id="firstName" [(ngModel)]="currentPlayer.firstName" />
     </div>
     <div>
@@ -19,14 +19,16 @@
 </div>
 
 <div>
-  <input type="radio" id="tableopt"  value="table" checked [(ngModel)]="viewType" />
+  <input type="radio" id="tableopt"  value="table" [(ngModel)]="viewType" />
   <label for="tableopt">table</label>
   <input type="radio" id="listopt" value="list"  [(ngModel)]="viewType" />
   <label for="listopt">list</label>
 </div>
+{{ viewType }}
 
-@if (viewType == 'table'){
-  <app-players-table [players]="players" (over)="onOver($event)">
+@if (viewType == 'table') {
+  <app-players-table [players]="players"
+    (clickPlayer)="onSelectPlayer($event)">
   </app-players-table>
 } @else {
   <app-players-list [players]="players"></app-players-list>

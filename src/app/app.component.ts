@@ -3,19 +3,26 @@ import { FormsModule } from '@angular/forms';
 import { Player } from './models/player';
 import { PlayersTableComponent } from "./components/players-table/players-table.component";
 import { PlayersListComponent } from './components/players-list/players-list.component';
+import { setAlternateWeakRefImpl } from '@angular/core/primitives/signals';
+import { PlayersTitleComponent } from "./components/players-title/players-title.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, PlayersTableComponent, PlayersListComponent],
+  imports: [FormsModule, PlayersTableComponent, PlayersListComponent, PlayersTitleComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  onOver($event: string) {
-    alert($event  + 'depuis app component');
+
+
+  public selectedPlayer: Player | undefined;
+
+  onSelectPlayer($event: Player) {
+    this.selectedPlayer = $event;
   }
+
   viewType: string='table';
 
   public players: Player[] =  [
