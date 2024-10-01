@@ -16,3 +16,7 @@ Pour l'utliser
 ```html
 <app-my-component-name></app-my-component-name>
 ```
+
+## Pour la prochaine séance : 
+- refaire tout l'exercice serait pas mal
+- créer un composant "PlayerForm" qui s'occupe de gérer le formulaire. Il émet un évenement (output) lorsque l'utilisateur clique sur le bouton ajouter
