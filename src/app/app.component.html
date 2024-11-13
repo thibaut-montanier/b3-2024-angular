@@ -1,7 +1,7 @@
 <div class="main">
   <div>
     <app-players-title [actualPlayer]="selectedPlayer"></app-players-title>
-    <app-player-form (addPlayer)="onSubmit($event)"></app-player-form>
+    <app-player-form [editPlayer]="selectedPlayer" (addPlayer)="onSubmit($event)"></app-player-form>
   </div>
 
   <div>

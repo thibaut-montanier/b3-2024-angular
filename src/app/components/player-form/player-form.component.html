@@ -1,16 +1,31 @@
-<div>
+<button (click)="onNew()">New</button>
+<form [formGroup]="formGroup" (submit)="onSubmit()">
   <div>
     <label for="name" class="inputlabel">name</label>
-    <input id="name" [(ngModel)]="currentPlayer.name" />
+    <input id="name"formControlName="name" />
+    @if (showFieldError("name")){
+      <p class="fielderror">Saisie invalide</p>
+    }
+    <!-- version avancée de la gestion d'erreur
+    @if (showFieldError("name", "required")){
+      <p class="fielderror">Le champ est requis</p>
+    } @else if (showFieldError("name")){
+      <p>Erreur, saisie invalide</p>
+    }
+    {{ getError("name") | json}}
+     -->
   </div>
   <div>
     <label for="firstName" class="inputlabel2">First name</label>
-    <input id="firstName" [(ngModel)]="currentPlayer.firstName" />
+    <input id="firstName" formControlName="firstName" />
   </div>
   <div>
     <label for="ranking">Ranking</label>
-    <input id="ranking" type="number" [(ngModel)]="currentPlayer.ranking" />
+    <input id="ranking" type="number" formControlName="ranking" />
+    @if (showFieldError("ranking")){
+      <p class="fielderror">Saisie invalide</p>
+    }
   </div>
 
-  <button (click)="onSubmit()">Save</button>
-</div>
+  <button type="submit" [disabled]="!formGroup.valid">Save</button>
+</form>
