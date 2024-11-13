@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <label for="name" class="inputlabel">name</label>
+    <input id="name" [(ngModel)]="currentPlayer.name" />
+  </div>
+  <div>
+    <label for="firstName" class="inputlabel2">First name</label>
+    <input id="firstName" [(ngModel)]="currentPlayer.firstName" />
+  </div>
+  <div>
+    <label for="ranking">Ranking</label>
+    <input id="ranking" type="number" [(ngModel)]="currentPlayer.ranking" />
+  </div>
+
+  <button (click)="onSubmit()">Save</button>
+</div>

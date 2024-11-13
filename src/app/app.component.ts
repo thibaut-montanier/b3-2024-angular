@@ -5,18 +5,17 @@ import { PlayersTableComponent } from "./components/players-table/players-table.
 import { PlayersListComponent } from './components/players-list/players-list.component';
 import { setAlternateWeakRefImpl } from '@angular/core/primitives/signals';
 import { PlayersTitleComponent } from "./components/players-title/players-title.component";
+import { PlayerFormComponent } from './components/player-form/player-form.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, PlayersTableComponent, PlayersListComponent, PlayersTitleComponent],
+  imports: [FormsModule, PlayersTableComponent, PlayersListComponent, PlayersTitleComponent, PlayerFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
-
   public selectedPlayer: Player | undefined;
 
   onSelectPlayer($event: Player) {
@@ -33,11 +32,9 @@ export class AppComponent {
 
   public title = 'TennisPlayer - appli de gestion des joueurs';
 
-  public currentPlayer = new Player();
-
-  public onSubmit(){
-    this.players.push(this.currentPlayer);
-    this.currentPlayer = new Player();
+  public onSubmit(player: Player){
+    this.players.push(player);
+    this.selectedPlayer = player;
   }
 }
 
