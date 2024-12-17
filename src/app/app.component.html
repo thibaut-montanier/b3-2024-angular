@@ -13,9 +13,9 @@
   {{ viewType }}
 
   @if (viewType == 'table') {
-    <app-players-table [players]="players"
+    <app-players-table [players]="players()"
     (clickPlayer)="onSelectPlayer($event)">
   </app-players-table>
 } @else {
-  <app-players-list [players]="players"></app-players-list>
+  <app-players-list [players]="players()"></app-players-list>
 }
