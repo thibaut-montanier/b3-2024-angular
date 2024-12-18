@@ -3,7 +3,7 @@ import { Player } from '../models/player';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TennisPlayersService {
   private _PlayerList: Player[] = [
@@ -12,11 +12,14 @@ export class TennisPlayersService {
     {name: 'Djokovic', firstName: 'Novak', ranking: 1},
   ];
 
+  public constructor(private _httpClient: HttpClient){
+  }
+
   public get(){
-    return [...this._PlayerList];
+    return this._httpClient.get<Player[]>('api/player');
   }
 
   public add(tennisPlayer: Player){
-    this._PlayerList = [...this._PlayerList, tennisPlayer];
+    return this._httpClient.post('/api/player', tennisPlayer);
   }
 }

@@ -17,5 +17,8 @@
     (clickPlayer)="onSelectPlayer($event)">
   </app-players-table>
 } @else {
+  <div>
+  <button type="button" (click)="onRefreshList()">Refresh</button>
+  </div>
   <app-players-list [players]="players()"></app-players-list>
 }
