@@ -57,7 +57,14 @@ export class AppComponent {
   }
 
   public onSubmit(player: Player){
-    this._tennisPlayerService.add(player).subscribe(()=>{});
+    if (player.id != undefined && player.id>0){
+      alert('faire le put ici');
+    } else{
+      this._tennisPlayerService.add(player).subscribe(()=>{
+        this.onRefreshList();
+      });
+    }
+
     this.selectedPlayer = player;
   }
 }

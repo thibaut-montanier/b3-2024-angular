@@ -16,6 +16,7 @@ export class PlayerFormComponent  implements OnChanges {
   public addPlayer = output<Player>();
 
   public formGroup = new FormGroup({
+    id: new FormControl(),
     name: new FormControl('', [Validators.required, Validators.maxLength(20)]),
     firstName: new FormControl(''),
     ranking: new FormControl(0, [Validators.required, Validators.min(1)])
@@ -35,6 +36,7 @@ export class PlayerFormComponent  implements OnChanges {
 
   public onSubmit(){
     const result = new Player();
+    result.id = this.editPlayer?.id;
     result.name = this.formGroup.value.name!;
     result.firstName = this.formGroup.value.firstName!;
     result.ranking = +this.formGroup.value.ranking!;
