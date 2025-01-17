@@ -58,7 +58,9 @@ export class AppComponent {
 
   public onSubmit(player: Player){
     if (player.id != undefined && player.id>0){
-      alert('faire le put ici');
+      this._tennisPlayerService.put(player).subscribe(()=>{
+        this.onRefreshList();
+      })
     } else{
       this._tennisPlayerService.add(player).subscribe(()=>{
         this.onRefreshList();

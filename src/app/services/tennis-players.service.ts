@@ -17,4 +17,8 @@ export class TennisPlayersService {
   public add(tennisPlayer: Player){
     return this._httpClient.post('/api/player', tennisPlayer);
   }
+
+  public put(tennisPlayer: Player){
+    return this._httpClient.put('/api/player/' + tennisPlayer.id, tennisPlayer);
+  }
 }
